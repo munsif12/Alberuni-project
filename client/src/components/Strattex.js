@@ -105,21 +105,22 @@ const Strattex = () => {
                     </thead>
                     <tbody>
                         {/* {data.map((d, i) => ( */}
-                        {data.filter(searched(keyword)).map((c, i) => (
-                            <>
-                                <tr id={c.firstName} key={i}>
+                        {data.filter(searched(keyword)).map((c, i) => {
+                            if (c.role == "1") {
+                                return (
+                                    <>
+                                        <tr key={i}>
+                                            <th scope="row">{i}</th>
+                                            <td>{c.firstName}</td>
+                                            <td>{c.lastName}</td>
+                                            <td>Users</td>
+                                            <td /><button type="button" class="btn btn-outline-danger btn-sm" onClick={() => handleRemove(c)}>Delete</button>
 
-
-                                    <th scope="row">{c.role}</th>
-                                    <td>{c.firstName}</td>
-                                    <td>{c.lastName}</td>
-                                    <td>User</td>
-                                    <td /><button onClick={() => handleRemove(c)} type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                                    {/* <td /><button onClick={() => { handleRemove(i) }} type="button" class="btn btn-outline-danger btn-sm">Delete</button> */}
-
-                                </tr>
-                            </>
-                        ))}
+                                        </tr>
+                                    </>
+                                )
+                            } else return null;
+                        })}
                     </tbody>
                 </table>
                 <h2>Senior Users</h2>
@@ -134,18 +135,22 @@ const Strattex = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.filter(searched(keyword)).map((c, i) => (
-                            <>
-                                <tr key={i}>
-                                    <th scope="row">{c.role}</th>
-                                    <td>{c.firstName}</td>
-                                    <td>{c.lastName}</td>
-                                    <td>Senior Users</td>
-                                    <td /><button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                        {data.filter(searched(keyword)).map((c, i) => {
+                            if (c.role == "2") {
+                                return (
+                                    <>
+                                        <tr key={i}>
+                                            <th scope="row">{i + 1}</th>
+                                            <td>{c.firstName}</td>
+                                            <td>{c.lastName}</td>
+                                            <td>Senior Users</td>
+                                            <td /><button type="button" class="btn btn-outline-danger btn-sm" onClick={() => handleRemove(c)}>Delete</button>
 
-                                </tr>
-                            </>
-                        ))}
+                                        </tr>
+                                    </>
+                                )
+                            } else return null;
+                        })}
                     </tbody>
                 </table>
                 <h2>WFM</h2>
@@ -160,20 +165,22 @@ const Strattex = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.filter(searched(keyword)).map((c, i) => (
-                            <>
-                                <tr key={i}>
+                        {data.filter(searched(keyword)).map((c, i) => {
+                            if (c.role == "3") {
+                                return (
+                                    <>
+                                        <tr key={i}>
+                                            <th scope="row">{i + 1}</th>
+                                            <td>{c.firstName}</td>
+                                            <td>{c.lastName}</td>
+                                            <td>WFM Professionals</td>
+                                            <td /><button type="button" class="btn btn-outline-danger btn-sm" onClick={() => handleRemove(c)}>Delete</button>
 
-
-                                    <th scope="row">{c.role}</th>
-                                    <td>{c.firstName}</td>
-                                    <td>{c.lastName}</td>
-                                    <td>WFM Professional</td>
-                                    <td /><button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-
-                                </tr>
-                            </>
-                        ))}
+                                        </tr>
+                                    </>
+                                )
+                            } else return null;
+                        })}
                     </tbody>
                 </table>
             </div>
