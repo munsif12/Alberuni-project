@@ -106,11 +106,11 @@ const Strattex = () => {
                     <tbody>
                         {/* {data.map((d, i) => ( */}
                         {data.filter(searched(keyword)).map((c, i) => {
-                            if (c.role == "1") {
+                            if (c.role === "1") {
                                 return (
                                     <>
                                         <tr key={i}>
-                                            <th scope="row">{i}</th>
+                                            <th scope="row">{c.role}</th>
                                             <td>{c.firstName}</td>
                                             <td>{c.lastName}</td>
                                             <td>Users</td>
@@ -136,11 +136,11 @@ const Strattex = () => {
                     </thead>
                     <tbody>
                         {data.filter(searched(keyword)).map((c, i) => {
-                            if (c.role == "2") {
+                            if (c.role === "2") {
                                 return (
                                     <>
                                         <tr key={i}>
-                                            <th scope="row">{i + 1}</th>
+                                            <th scope="row">{c.role}</th>
                                             <td>{c.firstName}</td>
                                             <td>{c.lastName}</td>
                                             <td>Senior Users</td>
@@ -166,11 +166,11 @@ const Strattex = () => {
                     </thead>
                     <tbody>
                         {data.filter(searched(keyword)).map((c, i) => {
-                            if (c.role == "3") {
+                            if (c.role === "3") {
                                 return (
                                     <>
                                         <tr key={i}>
-                                            <th scope="row">{i + 1}</th>
+                                            <th scope="row">{c.role}</th>
                                             <td>{c.firstName}</td>
                                             <td>{c.lastName}</td>
                                             <td>WFM Professionals</td>
